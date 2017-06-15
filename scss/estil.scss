@@ -1,0 +1,178 @@
+@import './parcials/colors';
+@import './parcials/mixins';
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+body {
+    font-family: monospace;
+    color: $color-base;
+}
+
+header {
+    text-align: center;
+    margin: 2rem auto 6rem;
+    h1 {
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: 0.2rem;
+        font-size: 2.5rem;
+    }
+    h2 {
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+main {
+    width: 90%;
+    margin: 1rem auto;
+    p::first-letter {
+        font-size: 2em;
+        vertical-align: middle;
+        color: $color-principal;
+    }
+    article {
+        padding-bottom: 3rem;
+        h1 {
+            text-align: center;
+            border-bottom: solid 1.5px $color-principal;
+            width: 60%;
+            margin: 2rem auto 4rem;
+            padding-bottom: 2rem;
+            font-size: 2rem;
+            @include pnt-mitjanes() {
+                width: 80%;
+                padding-bottom: 1.5rem;
+                margin: 1rem auto 2rem;
+                @include pnt-petites() {
+                    width: 100%;
+                    padding-bottom: 1rem;
+                    margin: 1rem auto 1rem;
+                }
+            }
+        }
+        .objectiu {
+            font-size: 1.2rem;
+            @include pnt-mitjanes(){
+                text-align:justify;
+                word-wrap: break-word;
+            }
+        }
+    }
+}
+
+section {
+    display: flex;
+    flex-grow: 1;
+    @include pnt-gegants() {
+        flex-direction: row;
+        justify-content: space-between;
+        @include pnt-grans() {
+            flex-direction: row;
+            flex-grow: 1;
+            justify-content: space-between;
+            @include pnt-mitjanes() {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                @include pnt-petites() {
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+.esperem {
+    flex-direction: column;
+    align-items: center;
+    .vine {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        form {
+            input {
+                @include rodo();
+                padding: 0.2rem 2rem;
+                font-size: 1.2rem;
+                text-align: center;
+                border: 0.5px solid $color-secundari;
+            }
+        }
+        @include pnt-petites {
+            justify-content: center;
+            form {
+                display: flex;
+                flex-direction: column;
+                input {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.tasca {
+    color: $color-secundari;
+    background-color: white;
+    border: 0.5px solid $color-suau;
+    padding: 1em 2.5em;
+    margin-left: 3%;
+    max-width: 30%;
+    font-size: 1.2rem;
+    transition: background-color 0.5s, transform 0.5s;
+    h2 {
+        font-size: 1.4rem;
+        text-align: center;
+        border-bottom: solid 1px $color-principal;
+    }
+    &:hover {
+        @include targeta();
+        @include aixeca();
+    }
+    @include pnt-mitjanes() {
+        margin-top: 1.5rem;
+        max-width: 66%;
+        @include pnt-petites() {
+            margin-top: 1rem;
+            max-width: 88%;
+        }
+    }
+}
+
+.boto {
+    border: 0.5px solid darken($color-destacat, 25%);
+    @include rodo();
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.4rem 2rem;
+}
+
+.boto--llistaCorreu {
+    background-color: $color-destacat;
+    color: white;
+    font-size: 1.2rem;
+    transition: font-size 0.2s, transform 0.5s;
+    font-family: 'Luckiest Guy', sans-serif, cursive;
+    cursor: pointer;
+    &:hover {
+        @include pocaOmbra();
+        @include aixecaPoc();
+    }
+}
+
+.boto--slack {
+    color: white;
+    font-size: 1.2rem;
+    background-color: $color-destacat;
+    margin-top: 1rem;
+    text-align: center;
+    transition: font-size 0.2s, transform 0.5s;
+    font-family: 'Luckiest Guy', sans-serif, cursive;
+    &:hover {
+        @include ombra();
+        @include aixeca();
+    }
+}

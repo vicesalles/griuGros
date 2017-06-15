@@ -1,0 +1,21 @@
+{
+  "name": "griugros",
+  "version": "0.0.2",
+  "description": "Aplicació Web de l'Associació",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vice Sallés",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.12",
+    "chai": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^3.1.0",
+    "mocha": "^3.4.2"
+  }
+}
